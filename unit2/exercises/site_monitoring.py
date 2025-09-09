@@ -33,7 +33,7 @@ class SiteMonitor:
     def __init__(self):
         self._data = pd.DataFrame(columns = ['timestamp', 'attempt', 'url', 'changed', 'latest', 'previous'])
     
-    def monitor(self, site: str):
+    def monitor_and_get_data(self, site: str):
         
         hash_comparer = HashComparer()
 
@@ -50,14 +50,16 @@ class SiteMonitor:
             hash_comparer.update(response_hash)
 
             self._data = pd.concat([self._data, pd.DataFrame({
-                'timestamp': [datetime.now()],
-                'attempt': [count],
-                'url': [site],
-                'changed': [hash_comparer.did_change()],
-                'latest': [hash_comparer.latest],
-                'previous': [hash_comparer.previous]
+                'timestamp' : [datetime.now()],
+                'attempt'   : [count],
+                'url'       : [site],
+                'changed'   : [hash_comparer.did_change()],
+                'latest'    : [hash_comparer.latest],
+                'previous'  : [hash_comparer.previous]
             })], ignore_index=True)
 
             print(f'[{datetime.now()}] Monitoring attempt: ({count}) Url: {site} Did change?: {hash_comparer.did_change()} | Hashes latest: {hash_comparer.latest} VS. previous: {hash_comparer.previous}')
 
             sleep(MONITORING_INTERVAL)
+
+        return self._data
