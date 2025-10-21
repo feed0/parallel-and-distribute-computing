@@ -10,5 +10,8 @@ pip3 install flask
 # Install git
 sudo yum install git -y
 
+# Clone repo
+git clone https://github.com/feed0/parallel-and-distribute-computing.git
+
 # Rodar aplicação (app.py é o nome do arquivo)
 python3 app.py
