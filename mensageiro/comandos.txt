@@ -1,0 +1,11 @@
+# Baixar o pip3
+curl -O https://bootstrap.pypa.io/get-pip.py
+
+# Instalar o pip3 no root
+python3 get-pip.py
+
+# Instalar flask
+pip3 install flask
+
+# Rodar aplicação (app.py é o nome do arquivo)
+python3 app.py
