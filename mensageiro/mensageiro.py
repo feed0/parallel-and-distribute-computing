@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 ARQUIVO_MSG = "mensagens.txt"
 PORTA_LOCAL = 5000
-SERVIDOR_DESTINO = "http://44.203.247.157:5000/descoberta"
+SERVIDOR_DESTINO = "http://3.219.219.145:5000/descoberta"
 
 HTML = """
 <!DOCTYPE html>
