@@ -13,7 +13,7 @@ sns_client = boto3.client("sns", region_name="us-east-1")
 
 
 def subscribe_to_sns():
-    endpoint_url = 'http://18.214.15.141/'  # IP público da EC2 subscriber
+    endpoint_url = 'http://18.214.15.141:5000/'  # IP público da EC2 subscriber
 
     try:
         response = sns_client.subscribe(
