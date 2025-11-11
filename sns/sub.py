@@ -6,14 +6,14 @@ from flask import Flask, request
 app = Flask(__name__)
 
 # Substitua pelo ARN do seu tópico SNS
-TOPIC_ARN = 'arn:aws:sns:us-east-1:477979230557:meu-topico'
+TOPIC_ARN = 'arn:aws:sns:us-east-1:844072903278:meu-topico'
 
 # Cliente SNS
 sns_client = boto3.client("sns", region_name="us-east-1")
 
 
 def subscribe_to_sns():
-    endpoint_url = 'http://3.91.247.212:5000/'  # IP público da EC2 subscriber
+    endpoint_url = 'http://18.214.15.141/'  # IP público da EC2 subscriber
 
     try:
         response = sns_client.subscribe(
