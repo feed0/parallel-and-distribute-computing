@@ -7,7 +7,7 @@ from datetime import datetime
 sns = boto3.client('sns', region_name='us-east-1')
 
 # ARN do seu tópico SNS
-TOPIC_ARN = 'arn:aws:sns:us-east-1:492600436587:meu-topico'  # Substitua pelo seu
+TOPIC_ARN = 'arn:aws:sns:us-east-1:844072903278:meu-topico'  # Substitua pelo seu
 
 def enviar_keep_alive():
     timestamp = datetime.utcnow().isoformat()
